@@ -337,6 +337,12 @@ BOOL CregistryDlg::ConnectDB()
 	mysqlConn = mysql_real_connect(&conn, host, DBUser, DBPass, DBName, m_App->DBPort, (char*)NULL, 0);
 	if (mysqlConn == NULL)
 	{
+		if(m_App->DBPort != 4306)
+		{ 
+			ShellExecute(nullptr, _T("open"), L"C:\\Program Files (x86)\\METASTORY\\CareCon\\CareConUpdate.exe", nullptr, nullptr, SW_SHOWNORMAL);
+		}
+		
+
 		AfxMessageBox(L"Database Server에 연결되지 않았습니다");
 		LogWrite(L"MySQL", L"Database Server에 연결되지 않았습니다");
 		return false;

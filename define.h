@@ -16,7 +16,7 @@
 //#define HOST			"112.219.127.2"		
 #define DBUser			"bizstory"
 #define DBPass			"uBpass4862"
-#define DBName			"new_bizstory"
+#define DBName			"test_bizstory"
 
 #define IDC_txtManagerPlace 9000
 #define IDC_txtCompanyName	9001

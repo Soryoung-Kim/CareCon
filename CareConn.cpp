@@ -73,12 +73,12 @@ BOOL CCareConnApp::InitInstance()
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 		// 중복 실행 방지 코드
-	HANDLE hMutexOneInstance = ::CreateMutex(NULL, TRUE, _T("Unique Name of CareCon v1.00"));
+	HANDLE hMutexOneInstance = ::CreateMutex(NULL, TRUE, _T("Unique Name of CareCon v1.1.5"));
 
 	BOOL bFound = FALSE;
 	bCompanyLogo = false;
 
-	dbName = L"new_bizstory";
+	dbName = L"test_bizstory";
 
 	// 만약 이미 만들어져 있다면 Instance가 이미 존재함
 	if (::GetLastError() == ERROR_ALREADY_EXISTS)
@@ -102,7 +102,7 @@ BOOL CCareConnApp::InitInstance()
 	}
 
 	// product version
-	strVersion = L"1.1.4";
+	strVersion = L"1.1.5";
 	
 	TCHAR dbHost[15], ui_company[255], ui_type[2];
 	CString Path;

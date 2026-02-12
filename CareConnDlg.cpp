@@ -98,8 +98,10 @@ BOOL CCareConnDlg::OnInitDialog()
         m_App->manager = GetRegistryStrValue(REG_USER, L"Software\\METASTORY\\CareCon", L"manager");    // 담당자
         m_App->place = GetRegistryStrValue(REG_USER, L"Software\\METASTORY\\CareCon", L"place");        // 설치 장소
 
+        
+
         // Compare to agent version
-        /*
+       
         if (!registryDlg.checkVersion(strVersion))
         {
             //AfxMessageBox(L"db up");
@@ -129,52 +131,7 @@ BOOL CCareConnDlg::OnInitDialog()
             }
             exit(1);
         }
-        */
-
-        if (!registryDlg.checkVersion(strVersion))
-        {
-            CString updatePath = L"C:\\Program Files (x86)\\METASTORY\\CareCon\\CareConUpdate.exe";
-            CString conflictMessage =
-                L"이미 다른 버전의 CareCon이 설치되어 있습니다.\n\n"
-                L"[확인]을 누르면 현재 설치를 계속 진행합니다.\n"
-                L"[취소]를 누르면 설치를 중단하고 업데이트 도구를 실행합니다.";
-
-            int userSelect = AfxMessageBox(conflictMessage, MB_ICONWARNING | MB_OKCANCEL);
-            if (userSelect == IDCANCEL)
-            {
-                DWORD attr = GetFileAttributesW(updatePath.GetString());
-                if (attr != INVALID_FILE_ATTRIBUTES && !(attr & FILE_ATTRIBUTE_DIRECTORY))
-                {
-                    HINSTANCE executeResult = ShellExecuteW(nullptr, L"open", updatePath.GetString(), nullptr, nullptr, SW_SHOWNORMAL);
-                    if ((INT_PTR)executeResult <= 32)
-                    {
-                        AfxMessageBox(L"업데이트 도구 실행 중 오류가 발생했습니다. 관리자에게 문의해주세요.", MB_ICONWARNING);
-                    }
-                }
-                else
-                {
-                    AfxMessageBox(L"업데이트 도구를 찾을 수 없습니다. 관리자에게 문의해주세요.", MB_ICONWARNING);
-                }
-
-                exit(1);
-            }
-        }
-
-        nCount = nRetCode + 1;
-        SetRegistryIntValue(REG_USER, L"Software\\METASTORY\\CareCon", L"Count", nCount);
-        // Authentification : MacAddr Check
-        if (isAuthentication())
-        {
-            if (registryDlg.LoadConfigure())
-                callReception();
-            //AfxMessageBox()
-        }
-        else
-        {
-            AfxMessageBox(L"등록되지 않은 사용자입니다. 관리자에게 문의해주세요!");
-        }
-        exit(1);
-
+       
     }
 
 
