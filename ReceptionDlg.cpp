@@ -250,7 +250,10 @@ void ReceptionDlg::CreateControl()
 	}
 	m_font.lfHeight = 14;
 	m_txtVer.SetDefaultFont(m_font);
-	m_txtVer.SetWindowText(L"v1.1.4");
+
+	CString displayVersion;
+	displayVersion.Format(L"v%s", m_App->strVersion);
+	m_txtVer.SetWindowText(displayVersion);
 
 	m_font.lfHeight = 20;
 	m_txtCompanyName.SetDefaultFont(m_font);

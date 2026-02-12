@@ -241,7 +241,10 @@ void CregistryDlg::CreateControl()
 	}
 	m_font.lfHeight = 11;
 	m_txtVer.SetDefaultFont(m_font);
-	m_txtVer.SetWindowText(L"v1.1.4");
+
+	CString displayVersion;
+	displayVersion.Format(L"v%s", m_App->strVersion);
+	m_txtVer.SetWindowText(displayVersion);
 
 
 	m_btnSearch.Create(_T(""), WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | BS_OWNERDRAW, CRect(330, 100, 406, 140), this, IDC_btnSearch);
@@ -637,8 +640,11 @@ void CregistryDlg::OnBnClickedOk()
 			mysql_free_result(sql_result);
 
 			// update del_yn -> y 
-			strQuery.Format(L"UPDATE %s.agent_info SET del_yn = 'Y', ver_info = '1.1.4' WHERE macaddress1='%s' or macaddress2='%s';",
-				m_App->dbName, m_App->activeMacCode, m_App->activeMacCode);
+			//strQuery.Format(L"UPDATE %s.agent_info SET del_yn = 'Y', ver_info = '1.1.4' WHERE macaddress1='%s' or macaddress2='%s';",
+			//	m_App->dbName, m_App->activeMacCode, m_App->activeMacCode);
+
+			strQuery.Format(L"UPDATE %s.agent_info SET del_yn = 'Y', ver_info = '%s' WHERE macaddress1='%s' or macaddress2='%s';",
+				m_App->dbName, m_App->strVersion, m_App->activeMacCode, m_App->activeMacCode);
 
 			if (!WriteDBQuery(strQuery)) {
 				AfxMessageBox(L"Failed to DB Update : sales");
