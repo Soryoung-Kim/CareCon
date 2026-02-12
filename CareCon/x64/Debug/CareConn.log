@@ -1,10 +1,10 @@
 ﻿  pch.cpp
   CareConn.cpp
   CareConnDlg.cpp
-C:\CareCon\bizstory\CareConn\CareConnDlg.cpp(343,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\CareCon\bizstory\CareConn\CareConnDlg.cpp(352,27): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   (소스 파일 '/CareConnDlg.cpp'을(를) 컴파일하는 중)
   
-C:\CareCon\bizstory\CareConn\CareConnDlg.cpp(347,19): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\CareCon\bizstory\CareConn\CareConnDlg.cpp(356,19): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   (소스 파일 '/CareConnDlg.cpp'을(를) 컴파일하는 중)
   
   CregistryDlg.cpp
@@ -14,12 +14,4 @@ C:\CareCon\bizstory\CareConn\CareConnDlg.cpp(347,19): warning C4018: '<': signed
   ReceptionDlg.cpp
   StdioFileEx.cpp
   코드를 생성하고 있습니다...
-CregistryDlg.obj : error LNK2019: mysql_init"public: int __cdecl CregistryDlg::ConnectDB(void)" (?ConnectDB@CregistryDlg@@QEAAHXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-CregistryDlg.obj : error LNK2019: mysql_real_connect"public: int __cdecl CregistryDlg::ConnectDB(void)" (?ConnectDB@CregistryDlg@@QEAAHXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-CregistryDlg.obj : error LNK2019: mysql_query"public: void __cdecl CregistryDlg::OnBnClickedOk(void)" (?OnBnClickedOk@CregistryDlg@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-CregistryDlg.obj : error LNK2019: mysql_store_result"public: void __cdecl CregistryDlg::OnBnClickedOk(void)" (?OnBnClickedOk@CregistryDlg@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-CregistryDlg.obj : error LNK2019: mysql_free_result"public: void __cdecl CregistryDlg::OnBnClickedOk(void)" (?OnBnClickedOk@CregistryDlg@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-CregistryDlg.obj : error LNK2019: mysql_fetch_row"public: void __cdecl CregistryDlg::OnBnClickedOk(void)" (?OnBnClickedOk@CregistryDlg@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-CregistryDlg.obj : error LNK2019: mysql_close"public: void __cdecl CregistryDlg::DisconnectDB(void)" (?DisconnectDB@CregistryDlg@@QEAAXXZ) 함수에서 참조되는 확인할 수 없는 외부 기호
-libmysql.lib : warning LNK4272: 'x86' 라이브러리 컴퓨터 종류가 'x64' 대상 컴퓨터 종류와 충돌합니다.
-C:\CareCon\bizstory\CareConn\x64\Debug\CareCon.exe : fatal error LNK1120: 7개의 확인할 수 없는 외부 참조입니다.
+  CareConn.vcxproj -> C:\CareCon\bizstory\CareConn\x64\Debug\CareCon.exe

@@ -1,2 +1,0 @@
-﻿  pch.cpp
-E:\PROJECT\비즈스토리\CareConn\framework.h(39,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'mysql.h': No such file or directory
