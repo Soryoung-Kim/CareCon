@@ -1,2 +1,0 @@
-E:\PROJECT\비즈스토리\CareConn\Release\WebView2Loader.dll
-E:\PROJECT\비즈스토리\CareConn\Release\CareCon.exe
